@@ -1,0 +1,15 @@
+@use 'variables.scss';
+
+@font-face {
+  font-family: 'akihabara';
+  src: url('/fonts/KH-Dot-Akihabara-16.ttf') format('truetype');
+}
+
+* {
+  font-family: 'akihabara', 'DotfGothic16', 'Meiryo UI', sans-serif !important;
+  letter-spacing: 2px;
+}
+
+body {
+  // background-color: v.$base-bg-color;
+}

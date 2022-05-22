@@ -1,0 +1,9 @@
+$breakpoint: (
+  tablet: 'screen and (max-width:899px)',
+);
+
+@mixin mq($bp) {
+  @media #{map-get($breakpoint,$bp)} {
+    @content;
+  }
+}
