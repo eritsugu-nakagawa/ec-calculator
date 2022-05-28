@@ -30,8 +30,6 @@
   $: ({ cardList, totalCreateCost } = searchMinCost(items));
 </script>
 
-t
-
 {#if enchantList === undefined}
   <div class="center">
     <ScaleOut color="#00db37" size="120" />
