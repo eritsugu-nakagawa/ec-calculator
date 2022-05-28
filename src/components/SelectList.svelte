@@ -86,6 +86,7 @@
 
 <style lang="scss">
   @use '../styles/variables.scss';
+  @use '../styles/__mixin.scss' as mix;
 
   .block {
     display: flex;
@@ -97,10 +98,13 @@
   .item-no {
     font-weight: bold;
     width: 10rem;
+    min-width: 10rem;
+    font-size: clamp(1rem, 2.8vw, var(--font-size));
   }
 
   .select {
-    width: 14em;
+    width: 24rem;
+    min-width: 24rem;
   }
 
   select {
@@ -118,8 +122,8 @@
   .btn-icon {
     display: flex;
     padding: 0;
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
 
     justify-content: center;
     align-items: center;

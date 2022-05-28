@@ -28,6 +28,13 @@
     background-color: v.$nav-main-color;
     padding: 0.5rem;
     font-size: 1.5rem;
+
+    a {
+      @include mix.mq(sp) {
+        padding-left: clamp(1.1rem, 3.5vw, 2rem) !important;
+        padding-right: clamp(1.1rem, 3.5vw, 2rem) !important;
+      }
+    }
   }
 
   .brand {
