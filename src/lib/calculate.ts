@@ -1,11 +1,10 @@
-import { EnchantList } from '@store/enchant';
 export const searchMinCost = (items: cardItem[]) => {
   if (!items.length) return { cardList: [], totalCreateCost: 0 };
 
   let minCost = 1000;
   let minObj: cardItem[][] = [[]];
   const patternList: cardItem[][] | undefined = junretsu(items, items.length);
-  console.debug(patternList);
+
   if (!patternList) return { cardList: minObj, totalCreateCost: minCost };
 
   patternList.forEach((ptn) => {
@@ -151,13 +150,4 @@ export const costCalculation = (
 
 export const clearEnchantSelectList = () => {
   return { enchantSelectList: [0], items: [] };
-};
-
-export const getEnchantList = async () => {
-  const res = await fetch('http://localhost:3000/api/enchant-list');
-
-  if (res.status === 404) return;
-  const posts = await res.json();
-
-  EnchantList.set(posts);
 };

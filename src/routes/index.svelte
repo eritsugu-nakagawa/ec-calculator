@@ -1,30 +1,36 @@
-<script lang="ts">
+<script context="module" lang="ts">
   import { EnchantList } from '@store/enchant';
-  import {
-    searchMinCost,
-    costCalculation,
-    clearEnchantSelectList,
-    getEnchantList,
-  } from '@lib/calculate';
+  import type { Load } from '@sveltejs/kit';
+
+  export const load: Load = async ({ fetch }) => {
+    const res = await fetch('/api/enchant-list');
+    EnchantList.set(JSON.parse(JSON.stringify(await res.json())));
+
+    return { props: { EnchantList } };
+  };
+</script>
+
+<script lang="ts">
+  import { searchMinCost, costCalculation, clearEnchantSelectList } from '@lib/calculate';
 
   import { ScaleOut } from 'svelte-loading-spinners';
   import { Container, Card } from 'svelte-chota';
 
   import CardList from '@components/CardList.svelte';
   import SelectList from '@components/SelectList.svelte';
-  import { onDestroy } from 'svelte';
 
   let enchantSelectList: number[] = [0];
   let enchantList: enchant[] | undefined = undefined;
   let items: cardItem[] = [];
 
-  getEnchantList();
   $: enchantList = $EnchantList;
 
   let disabled: boolean = false;
   $: disabled = enchantSelectList.filter((elm) => elm > 0).length <= 1;
   $: ({ cardList, totalCreateCost } = searchMinCost(items));
 </script>
+
+t
 
 {#if enchantList === undefined}
   <div class="center">
@@ -77,7 +83,7 @@
       flex: 1;
     }
     .pane-right {
-      width: 430px;
+      width: 450px;
     }
     .pane-left,
     .pane-right {
