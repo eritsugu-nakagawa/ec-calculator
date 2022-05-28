@@ -1,5 +1,6 @@
 $breakpoint: (
   tablet: 'screen and (max-width:899px)',
+  sp: 'screen and (max-width:599px)',
 );
 
 @mixin mq($bp) {

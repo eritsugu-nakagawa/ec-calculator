@@ -22,6 +22,7 @@
 
 <style global lang="scss">
   @use '../styles/variables.scss' as v;
+  @use '../styles/__mixin.scss' as mix;
 
   nav {
     background-color: v.$nav-main-color;
@@ -42,6 +43,7 @@
   main {
     padding: 0.8rem;
     flex: 1;
+    width: 100%;
   }
 
   footer {

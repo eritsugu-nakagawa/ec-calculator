@@ -37,6 +37,8 @@
 </div>
 
 <style lang="scss">
+  @use '../styles/__mixin.scss' as mix;
+
   dl {
     margin: 0;
   }

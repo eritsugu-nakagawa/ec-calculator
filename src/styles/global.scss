@@ -1,4 +1,5 @@
 @use 'variables.scss';
+@use '__mixin.scss' as mix;
 
 @font-face {
   font-family: 'akihabara';
@@ -8,6 +9,12 @@
 * {
   font-family: 'akihabara', 'DotfGothic16', 'Meiryo UI', sans-serif !important;
   letter-spacing: 2px;
+}
+
+html {
+  @include mix.mq(tablet) {
+    font-size: clamp(6.5px, 2vw, 10px);
+  }
 }
 
 body {

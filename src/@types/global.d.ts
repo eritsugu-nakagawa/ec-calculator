@@ -9,3 +9,9 @@ interface cardItem {
   columnEnd: number;
   resultCost: number;
 }
+
+interface enchant {
+  id: number;
+  name: string;
+  cost: number;
+}
