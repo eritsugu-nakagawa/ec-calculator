@@ -9,7 +9,7 @@
   <title>エンチャントコスト計算機</title>
 </svelte:head>
 
-<Nav class="is-paddingless">
+<Nav class="is-paddingless header">
   <svelte:fragment slot="left">
     <a class="brand" href="/" on:click={() => (active = 0)}>エンチャントコスト計算機</a>
     <a href="/about" class:active={active === 1} on:click={() => (active = 1)}>About</a>
@@ -24,7 +24,7 @@
   @use '../styles/variables.scss' as v;
   @use '../styles/__mixin.scss' as mix;
 
-  nav {
+  :global(.header) {
     background-color: v.$nav-main-color;
     padding: 0.5rem;
     font-size: 1.5rem;

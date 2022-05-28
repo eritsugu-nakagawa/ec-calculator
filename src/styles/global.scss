@@ -10,13 +10,3 @@
   font-family: 'akihabara', 'DotfGothic16', 'Meiryo UI', sans-serif !important;
   letter-spacing: 2px;
 }
-
-html {
-  @include mix.mq(tablet) {
-    font-size: clamp(6.5px, 2vw, 10px);
-  }
-}
-
-body {
-  // background-color: v.$base-bg-color;
-}

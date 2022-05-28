@@ -12,15 +12,14 @@
 
   import CardList from '@components/CardList.svelte';
   import SelectList from '@components/SelectList.svelte';
+  import { onDestroy } from 'svelte';
 
   let enchantSelectList: number[] = [0];
   let enchantList: enchant[] | undefined = undefined;
   let items: cardItem[] = [];
 
   getEnchantList();
-  EnchantList.subscribe((value) => {
-    enchantList = value;
-  });
+  $: enchantList = $EnchantList;
 
   let disabled: boolean = false;
   $: disabled = enchantSelectList.filter((elm) => elm > 0).length <= 1;
@@ -64,10 +63,6 @@
 <style lang="scss">
   @use '../styles/variables.scss';
   @use '../styles/__mixin.scss' as mix;
-
-  .container {
-    width: 100%;
-  }
 
   .pane-wrapper {
     display: flex;

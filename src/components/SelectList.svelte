@@ -4,7 +4,7 @@
   const iconSize: number = 16;
 
   export let enchantSelectList: number[];
-  export let enchantList: { id: number; name: string; cost: number }[];
+  export let enchantList: enchant[];
 
   function addItem(idx: number) {
     if (enchantSelectList.length < 8) {
